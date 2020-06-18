@@ -12,8 +12,8 @@ const Home = () => {
                 <h5 className="center red-text">We make the best out of plastic to make your life better.</h5>
             </div>
         </nav>
-        <div className="container center">
-        <ReactPlayer url="https://www.youtube.com/watch?v=2R6gnFnTnKE&t=296s" />
+        <div className="container center" style={{marginTop:5, marginBottom:10}}>
+        <ReactPlayer url="https://www.youtube.com/watch?v=2R6gnFnTnKE&t=296s" style={{width:"80%",height:"auto"}}/>
         </div>
             <Carousel />
         </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import { getDirectors } from '../../actions/directorActions';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
@@ -32,7 +32,7 @@ const About = ({ getDirectors, directors }) => {
                 style={{
                 ...centeredStyles,
                 overflow: "hidden",
-                height: "100vh",
+                marginTop:0
                 }}
             >
                 <VisibilitySensor partialVisibility>
@@ -43,13 +43,13 @@ const About = ({ getDirectors, directors }) => {
                         opacity: isVisible ? 1 : 0,
                         transform: isVisible
                         ? "translateX(0)"
-                        : "translateX(400px)",
+                        : "translateX(200px)",
                     }}
                     >
                     {(props) => (
-                        <div className="row" style={{...props, backgroundColor: "#ede7f6"}}>
-                            <div className="about"><h2 style={{...h2Styles, ...props, marginTop:0}}>About us</h2></div>
-                            <div className="col m8">
+                        <div className="row" style={{...props, backgroundColor: "#ede7f6", marginTop:10}}>
+                            <div className="about"><h2 style={{...h2Styles, ...props, marginTop:10, paddingTop:10}}>About us</h2></div>
+                            <div className="col s12 l8">
                             <p>
                             Laddha Agro Plast Industries Private Limited is a Non-govt company, incorporated on 19 Nov, 1987. It's a private unlisted company and is classified as 'company limited by shares'.
 
@@ -59,16 +59,19 @@ const About = ({ getDirectors, directors }) => {
 
                             Company is registered in Mumbai (Maharashtra) Registrar Office. Laddha Agro Plast Industries Private Limited registered address is PLOT NO 125M I D C JALGAON MH 425003 IN
                             </p>
-                            <div className="row">
-                                <div className="col m6">
-                                    <img src="/images/iaf.png" alt="iaf" />
+                            <div>
+                                <h4 className="center">Certificates</h4>
+                            </div>
+                            <div className="row" style={{alignItems:"center"}}>
+                                <div className="col s12 m6">
+                                    <img src="/images/iaf.png" alt="iaf" style={{width:275}}/>
                                 </div>
-                                <div className="col m6">
+                                <div className="col s12 m6">
                                     <img src="/images/isi.jfif" alt="isi" />
                                 </div>
                             </div>
                             </div>
-                            <div className="col m4 center">
+                            <div className="col s12 l4 center">
                                 <img src="/images/iso9001.jfif" alt="iso" style={{width: 350,height:350, marginTop:10 }} />
                             </div>
                         </div>
@@ -82,12 +85,11 @@ const About = ({ getDirectors, directors }) => {
             <div
                 style={{
                 ...centeredStyles,
-                height: "50vh",
                 }}
             >
                 <VisibilitySensor>
                 {({ isVisible }) => (
-                    <Spring delay={300} to={{ opacity: isVisible ? 1 : 0 }}>
+                    <Spring delay={200} to={{ opacity: isVisible ? 1 : 0 }}>
                     {({ opacity }) => (
                         <div className="row" style={{  opacity, backgroundColor:"#e0f2f1" }}>
                         <h2 style={{...h2Styles, marginTop:0}}>History</h2>
@@ -122,20 +124,20 @@ const About = ({ getDirectors, directors }) => {
                         opacity: isVisible ? 1 : 0,
                         transform: isVisible
                         ? "translateX(0)"
-                        : "translateX(-400px)",
+                        : "translateX(-200px)",
                     }}
                     >
                     {(props) => (
                         <div>
                         
-                        {directors.length!== 0 && <div style={{...props, backgroundColor:"#efebe9"}}>
+                        {directors.length!== 0 && <div style={{...props, backgroundColor:"#efebe9"}} className="center">
                             <div className="row"><h3 className="center" style={{...h2Styles, ...props, marginTop:0}}>Directors</h3></div>
-                            <div className="row">
-                                <div className="col m2"></div>
-                                {directors.map((director) => <div className="col m4">
-                                <div className="card hoverable" style={{width:400, height:600}}>
+                            <div className="row center">
+                                <div className="col m1"></div>
+                                {directors.map((director) => <Fragment><div className="col s12 m4">
+                                <div className="card hoverable" style={{width:300, height:600}}>
                                     <div className="card-image">
-                                        <img src={director.image} style={{width:400, height:400}} />
+                                        <img src={director.image} style={{width:300, height:400}} />
                                         <span className="card-title">{director.name}</span>
                                     </div>
                                     <div className="card-content">
@@ -143,6 +145,8 @@ const About = ({ getDirectors, directors }) => {
                                     </div>
                                 </div>
                             </div>
+                            <div className="col m1"></div>
+                            </Fragment>
                             )}
                             </div>
                         </div>

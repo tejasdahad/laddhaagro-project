@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import M from 'materialize-css';
 
 const Navbar = () => {
+    useEffect(() => {
+        let dropdown = document.querySelectorAll('dropdown-trigger');
+        const options = {
+            constrainWidth: false,
+            coverTrigger: false,
+            alignment: 'left'
+        };
+        M.Dropdown.init(dropdown, options);
+    })
     return (
         <div>
             <nav>
@@ -23,7 +33,7 @@ const Navbar = () => {
             <li><Link to="/contact">Contact</Link></li>
             <li><Link to="/products">Products <a className='dropdown-trigger' href='#' data-target='dropdown1'><i className="material-icons">arrow_drop_down</i></a></Link></li>
             </ul>
-            <ul id='dropdown1' class='dropdown-content' style={{width:200, height:200}}>
+            <ul id='dropdown1' class='dropdown-content'>
                 <li><Link to="/drips">Drips</Link></li>
                 <li><Link to="/pipes">Pipes</Link></li>
                 <li><Link to="/agriproducts">Agricultural Products</Link></li>

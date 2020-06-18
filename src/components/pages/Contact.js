@@ -37,8 +37,8 @@ const Contact = () => {
         });
       }
     return (
-        <div className="container">
-            <div className="card" style={{width:500, height:500, marginLeft:200}}>
+        <div className="container center">
+            <div className="card">
                 <div className="card-image waves-effect waves-block waves-light">
                     <img className="activator" src="images/pipes.jpg" alt="pipes" style={{width:500, height:400}} />
                 </div>
@@ -61,8 +61,8 @@ const Contact = () => {
             </div>
             <div className="center">
                 <fieldset className="location">
-                <h4><i className="material-icons">grade</i>  Where to find us?  <i className="material-icons">grade</i></h4>
-                <div className="section"><iframe title="google location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.0827953490043!2d75.59206931403229!3d20.989317986019724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDU5JzIxLjUiTiA3NcKwMzUnMzkuMyJF!5e0!3m2!1sen!2sin!4v1582119764829!5m2!1sen!2sin" width="600" height="450" frameBorder="0" style={{border:0}} allowFullScreen=""></iframe></div>
+                <h4><i className="material-icons hide-on-med-and-down">grade</i>  Where to find us?  <i className="material-icons hide-on-med-and-down">grade</i></h4>
+                <div className="section"><iframe title="google location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.0827953490043!2d75.59206931403229!3d20.989317986019724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDU5JzIxLjUiTiA3NcKwMzUnMzkuMyJF!5e0!3m2!1sen!2sin!4v1582119764829!5m2!1sen!2sin" width="100%" height="250px" frameBorder="0" style={{border:0}} allowFullScreen=""></iframe></div>
                 </fieldset>
             </div>
             <div className="row">

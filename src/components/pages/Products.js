@@ -6,7 +6,7 @@ const Products = () => {
     return (
         <div>
             <div className="title">
-                <h2 className="center" style={{marginBottom:0, marginTop:0, paddingBottom:10}}>PRODUCTS WE MAKE</h2>
+                <h2 className="center" style={{marginBottom:0, marginTop:10, paddingBottom:10}}>PRODUCTS WE MAKE</h2>
             </div>
             <div className="divider"></div>
             <div className="row hoverable coloring" style={{marginBottom:10}}>
@@ -79,7 +79,7 @@ const Products = () => {
                         <img src="/images/pipe4.jpeg" alt="pipe4" style={{width:300, height:200}} />
                     </div>
                     <div className="col m1"></div>
-                    <div className="col m3">
+                    <div className="col m3 hide-on-med-and-down">
                         <img src="/images/pvcISIM.jpeg" alt="pvcISIM" style={{width:300, height:200}} />
                     </div>
                 </div>
@@ -104,7 +104,7 @@ const Products = () => {
                 <img src="/images/rfta.jpg" alt="rfta" style={{width:300, height:200}}/>
                 </div>
                 <div className="row">
-                    <div className="col m3">
+                    <div className="col m3 hide-on-med-and-down">
                         <img src="/images/mta.jpg" alt="mta" style={{width:300, height:200}} />
                     </div>
                     <div className="col m1"></div>
@@ -112,7 +112,7 @@ const Products = () => {
                         <img src="/images/saddle.jpg" alt="saddle" style={{width:300, height:200}} />
                     </div>
                     <div className="col m1"></div>
-                    <div className="col m3">
+                    <div className="col m3 hide-on-med-and-down">
                         <img src="/images/reducingtee.jpg" alt="reducing tee" style={{width:300, height:200}} />
                     </div>
                 </div>

@@ -6,3 +6,12 @@
     background: grey;
     color: white;
 }
+
+
+@media only screen and  (min-width : 625px) {
+    .card {
+        width: 500px;
+        height: 500px;
+        margin-left: 175px;
+    }
+}
