@@ -1,7 +1,6 @@
 import React,{ useEffect, useCallback, Component } from 'react';
 import { Link } from 'react-router-dom';
 import M from 'materialize-css';
-import $ from 'jquery';
 
 const Pipes = () => {
     useEffect(() => {
@@ -34,7 +33,7 @@ const Pipes = () => {
                         <div className="collapsible-header"><h6>Roopam Gold</h6></div>
                         <div className="collapsible-body">
                             <span>
-                                <img src="images/isiroopam.jpg" alt="isiroopam" style={{width:500, height:250}} />
+                                <img src="images/isiroopam.jpg" alt="isiroopam" style={{width:"100%", height:250}} />
                             </span>
                         </div>
                     </li>
@@ -42,7 +41,7 @@ const Pipes = () => {
                         <div className="collapsible-header"><h6>Muviflex</h6></div>
                         <div className="collapsible-body">
                             <span>
-                                <img src="images/pvcISIM.jpeg" alt="pvcisim" style={{width:500, height:250}} />
+                                <img src="images/pvcISIM.jpeg" alt="pvcisim" style={{width:"100%", height:250}} />
                             </span>
                         </div>
                     </li>            

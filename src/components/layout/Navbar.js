@@ -6,8 +6,9 @@ const Navbar = () => {
     useEffect(() => {
         let dropdown = document.querySelectorAll('dropdown-trigger');
         const options = {
-            constrainWidth: false,
-            coverTrigger: false,
+            constrainWidth: true,
+            coverTrigger: true,
+            belowOrigin:true,
             alignment: 'left'
         };
         M.Dropdown.init(dropdown, options);
@@ -18,7 +19,7 @@ const Navbar = () => {
                 <div className="nav-wrapper blue">
                     <h5 className="left hide-on-med-and-down">LADDHA AGRO PLAST INDUSTRIES</h5>
                     <Link to="/" className="brand-logo center"><img className="hoverable" src="/images/logo.jpg" style={{height:65}} alt="logo" /></Link>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/about">About</Link></li>
@@ -27,13 +28,20 @@ const Navbar = () => {
                     </ul>
                 </div>
             </nav>
-            <ul class="sidenav" id="mobile-demo">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About us</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/products">Products <a className='dropdown-trigger' href='#' data-target='dropdown1'><i className="material-icons">arrow_drop_down</i></a></Link></li>
-            </ul>
-            <ul id='dropdown1' class='dropdown-content'>
+            <div className="sidenav" id="mobile-demo" style={{width:"50%"}}>
+            <div style={{backgroundColor:"#e3f2fd"}}>
+            <h4 style={{marginBottom:0, marginTop:0, paddingTop:5}}>Ladda Agro Plast Industries</h4>
+            </div>
+            <div className="divider" style={{marginTop:0}}></div>
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About us</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/products">Products <a id="2" className='dropdown-trigger btn transparent' href='#' data-target='dropdown1' style={{paddingLeft:0, border:"none", paddingRight:0, width:0}}><i className="material-icons black-text">expand_more</i></a></Link></li>
+                </ul>
+            </div>
+            
+            <ul id='dropdown1' className='dropdown-content' style={{width:"200px !important"}}>
                 <li><Link to="/drips">Drips</Link></li>
                 <li><Link to="/pipes">Pipes</Link></li>
                 <li><Link to="/agriproducts">Agricultural Products</Link></li>

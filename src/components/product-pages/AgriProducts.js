@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import { getAgriR, getAgriRG4, getAgriRG6 } from '../../actions/productsAction';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
@@ -16,26 +16,28 @@ const AgriProducts = ({ getAgriR, getAgriRG4, getAgriRG6, agriRoopam, agriRoopam
         <nav>
             <div className="nav-wrapper black">
             <div className="col s2"></div>
-            <div className="col s10" style={{paddingLeft:10}}>
+            <div className="col s10" style={{paddingLeft:10, marginTop:8}}>
                 <Link to="/products" className="breadcrumb">Products</Link>
                 <Link to="/agriproducts" className="breadcrumb">AgriProducts</Link>
             </div>
             </div>
         </nav>
-            <h3 className="center">AGRICULTURAL FITTINGS</h3>
+            <h3 className="center" style={{marginTop:5, marginBottom:5}}>AGRICULTURAL FITTINGS</h3>
             <div className="divider"></div>
-            <h5 className="center">AGRICULTURAL FITTINGS ROOPAM GOLD L/W</h5>
+            <div className="hoverable" style={{backgroundColor:"#eeeeee"}}>
+            <h5 className="center" style={{marginTop:5, marginBottom:5, paddingTop:10}}>AGRICULTURAL FITTINGS ROOPAM GOLD L/W</h5>
             <div className="center">
             {agriRoopam.length === 0 && <Spinner />}
             </div>
-            <div className="row">
-            {agriRoopam.length !== 0 && agriRoopam.map((agri) => (
-                <div className="card col s12 m4">
-                <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src={agri.image}  style={{width:450, height: 300}}/>
+            <div className="row" style={{paddingLeft:10, paddingRight:10, marginBottom:5}}>
+            {agriRoopam.length !== 0 && agriRoopam.map((agri) => (<Fragment>
+                
+                <div className="card col s12 m3 large" style={{height:"300px"}}>
+                <div class="card-image waves-effect waves-block waves-light" style={{height:"80%"}}>
+                <img class="activator" src={agri.image} style={{width:"100%", height:"100%"}}/>
                 </div>
-                <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4 center">{agri.name}<i class="material-icons right">more_vert</i></span>
+                <div class="card-content" style={{paddingBottom:0, paddingTop:5}}>
+                <span class="card-title activator grey-text text-darken-4 center">{agri.name}</span>
                 </div>
                 <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">{agri.name}<i class="material-icons right">close</i></span>
@@ -52,7 +54,7 @@ const AgriProducts = ({ getAgriR, getAgriRG4, getAgriRG6, agriRoopam, agriRoopam
                         <tbody>
                         {agri.agriprod.length!==0 && agri.agriprod.map((agriprod1) => <tr>
                             <td>{agriprod1.id}</td>
-                            <td><Link>{agriprod1.size}</Link></td>
+                            <td>{agriprod1.size}</td>
                             <td>{agriprod1.qty}</td>
                         </tr>)}
                         
@@ -62,23 +64,27 @@ const AgriProducts = ({ getAgriR, getAgriRG4, getAgriRG6, agriRoopam, agriRoopam
                 </div>}
                 </div>
             </div>
+            <div className="col m1"></div>
+            </Fragment>
             ))
+            
         }
-                    
+        </div>            
         </div>
         <div className="divider"></div>
-            <h5 className="center">AGRICULTURAL FITTINGS ROOPAM GOLD PN-4</h5>
+        <div style={{backgroundColor:"#eeeeee"}} className="hoverable">
+            <h5 className="center" style={{marginTop:5, marginBottom:5, paddingTop:5}}>AGRICULTURAL FITTINGS ROOPAM GOLD PN-4</h5>
             <div className="center">
             {agriRoopamG4.length === 0 && <Spinner />}
             </div>
-            <div className="row">
-            {agriRoopamG4.length !== 0 && agriRoopamG4.map((agri) => (
-                <div className="card col s12 m4">
-                <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src={agri.image}  style={{width:450, height: 300}}/>
+            <div className="row" style={{paddingLeft:10, paddingRight:10, marginBottom:5}}>
+            {agriRoopamG4.length !== 0 && agriRoopamG4.map((agri) => (<Fragment>
+                <div className="card col s12 m3 large" style={{height:"300px"}}>
+                <div class="card-image waves-effect waves-block waves-light" style={{height:"80%"}}>
+                <img class="activator" src={agri.image}  style={{width:"100%", height:"100%"}}/>
                 </div>
-                <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4 center">{agri.name}<i class="material-icons right">more_vert</i></span>
+                <div class="card-content"style={{paddingBottom:0, paddingTop:5}}>
+                <span class="card-title activator grey-text text-darken-4 center">{agri.name}</span>
                 </div>
                 <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">{agri.name}<i class="material-icons right">close</i></span>
@@ -95,7 +101,7 @@ const AgriProducts = ({ getAgriR, getAgriRG4, getAgriRG6, agriRoopam, agriRoopam
                         <tbody>
                         {agri.agriprod.length!==0 && agri.agriprod.map((agriprod1) => <tr>
                             <td>{agriprod1.id}</td>
-                            <td><Link>{agriprod1.size}</Link></td>
+                            <td>{agriprod1.size}</td>
                             <td>{agriprod1.qty}</td>
                         </tr>)}
                         
@@ -104,24 +110,30 @@ const AgriProducts = ({ getAgriR, getAgriRG4, getAgriRG6, agriRoopam, agriRoopam
                     </table>
                 </div>}
                 </div>
+                
             </div>
+            
+            <div className="col m1"></div>
+            
+            </Fragment>
             ))
         }
-                    
+        </div>           
         </div>
         <div className="divider"></div>
-            <h5 className="center">AGRICULTURAL FITTINGS ROOPAM GOLD PN-6</h5>
+        <div style={{backgroundColor:"#eeeeee"}} className="hoverable">
+            <h5 className="center" style={{marginTop:5, paddingTop:5}}>AGRICULTURAL FITTINGS ROOPAM GOLD PN-6</h5>
             <div className="center">
             {agriRoopamG6.length === 0 && <Spinner />}
             </div>
-            <div className="row">
-            {agriRoopamG6.length !== 0 && agriRoopamG6.map((agri) => (
-                <div className="card col s12 m4">
-                <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src={agri.image}  style={{width:450, height: 300}}/>
+            <div className="row" style={{paddingLeft:10, paddingRight:10, marginBottom:5}}>
+            {agriRoopamG6.length !== 0 && agriRoopamG6.map((agri) => (<Fragment>
+                <div className="card col s12 m3 large" style={{height:"300px"}}>
+                <div class="card-image waves-effect waves-block waves-light" style={{height:"80%"}}>
+                <img class="activator" src={agri.image}  style={{width:"100%", height:"100%"}}/>
                 </div>
-                <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4 center">{agri.name}<i class="material-icons right">more_vert</i></span>
+                <div class="card-content"style={{paddingBottom:0, paddingTop:5}}>
+                <span class="card-title activator grey-text text-darken-4 center">{agri.name}</span>
                 </div>
                 <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">{agri.name}<i class="material-icons right">close</i></span>
@@ -138,7 +150,7 @@ const AgriProducts = ({ getAgriR, getAgriRG4, getAgriRG6, agriRoopam, agriRoopam
                         <tbody>
                         {agri.agriprod.length!==0 && agri.agriprod.map((agriprod1) => <tr>
                             <td>{agriprod1.id}</td>
-                            <td><Link>{agriprod1.size}</Link></td>
+                            <td>{agriprod1.size}</td>
                             <td>{agriprod1.qty}</td>
                         </tr>)}
                         
@@ -148,9 +160,11 @@ const AgriProducts = ({ getAgriR, getAgriRG4, getAgriRG6, agriRoopam, agriRoopam
                 </div>}
                 </div>
             </div>
+            <div className="col m1"></div>
+            </Fragment>
             ))
         }
-                    
+        </div>        
         </div>
         </div>
     );
