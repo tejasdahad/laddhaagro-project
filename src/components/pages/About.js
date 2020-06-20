@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import './About.css';
 import { Spring } from "react-spring/renderprops";
-import VisibilitySensor from "react-visibility-sensor";
+import VisibilitySensor from "../layout/VisibilitySensor";
 
 
 const centeredStyles = {
@@ -25,6 +25,21 @@ const About = ({ getDirectors, directors }) => {
     useEffect(() => {
         getDirectors();
     },[directors]);
+    useEffect(() => {
+
+        typeWriter();        
+    },[]);
+    var i = 0;
+        var txt = 'Lorem ipsum dummy text blabla.';
+        var speed = 50;
+    function typeWriter() {
+        
+        if (i < txt.length) {
+            document.getElementById("demo").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
     return (
         <div>
             
@@ -50,6 +65,7 @@ const About = ({ getDirectors, directors }) => {
                         <div className="row" style={{...props, backgroundColor: "#ede7f6", marginTop:10}}>
                             <div className="about"><h2 style={{...h2Styles, ...props, marginTop:10, paddingTop:10}}>About us</h2></div>
                             <div className="col s12 l8">
+                            <p id="demo"></p>
                             <p>
                             Laddha Agro Plast Industries Private Limited is a Non-govt company, incorporated on 19 Nov, 1987. It's a private unlisted company and is classified as 'company limited by shares'.
 
@@ -93,7 +109,7 @@ const About = ({ getDirectors, directors }) => {
                     {({ opacity }) => (
                         <div className="row" style={{  opacity, backgroundColor:"#e0f2f1" }}>
                         <h2 style={{...h2Styles, marginTop:0}}>History</h2>
-                        <p>Laddha Agro Plast Industries Private Limited is a Private incorporated on 19 November 1987. It is classified as Non-govt company and is registered at Registrar of Companies, Mumbai. Its authorized share capital is Rs. 10,000,000 and its paid up capital is Rs. 7,900,000. It is inolved in Growing of crops; market gardening; horticulture
+                        <p id="company-info">Laddha Agro Plast Industries Private Limited is a Private incorporated on 19 November 1987. It is classified as Non-govt company and is registered at Registrar of Companies, Mumbai. Its authorized share capital is Rs. 10,000,000 and its paid up capital is Rs. 7,900,000. It is inolved in Growing of crops; market gardening; horticulture
         
                         Laddha Agro Plast Industries Private Limited's Annual General Meeting (AGM) was last held on 30 September 2019 and as per records from Ministry of Corporate Affairs (MCA), its balance sheet was last filed on 31 March 2019.
                         
@@ -156,8 +172,58 @@ const About = ({ getDirectors, directors }) => {
                     </Spring>
                 )}
                 </VisibilitySensor>
+                
             </div>
-
+            <div
+                style={{
+                overflow: "hidden",
+                }}
+            >
+                <VisibilitySensor partialVisibility>
+                {({ isVisible }) => (
+                    <Spring
+                    delay={300}
+                    to={{
+                        opacity: isVisible ? 1 : 0,
+                        transform: isVisible
+                        ? "translateX(0)"
+                        : "translateX(-200px)",
+                    }}
+                    >
+                    {(props) => (
+                        <div>
+                        
+                        {directors.length!== 0 && <div style={{...props, backgroundColor:"#efebe9"}} className="center">
+                            <div className="row"><h3 className="center" style={{...h2Styles, ...props, marginTop:0}}>Directors</h3></div>
+                            <div className="row center">
+                                <div className="col m1"></div>
+                                {directors.map((director) => <Fragment><div className="col s12 m4">
+                                <div class="flip-box">
+                                <div class="flip-box-inner">
+                                    <div class="flip-box-front">
+                                    <img src={director.image} style={{width:300, height:400}} />
+                                    <span className="card-title">{director.name}</span>
+                                    </div>
+                                    <div class="flip-box-back">
+                                    <h5>Hey, this is the director of the company.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                                </div>
+                                <div className="col m1"></div>
+                            </Fragment>
+                            )}
+                            </div>
+                        </div>
+                        }
+                        </div>
+                    )}
+                    </Spring>
+                )}
+                </VisibilitySensor>
+                
+            </div>
+            
             
         </div>
     );

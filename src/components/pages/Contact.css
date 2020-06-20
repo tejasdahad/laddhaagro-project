@@ -15,3 +15,25 @@
         margin-left: 175px;
     }
 }
+
+.box-layout {
+    align-items: center;
+    background: url('/images/pipes.jpg');
+    background-size: cover;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+
+.box-layout__box {
+    background: fade-out( white, .55);
+    border-radius: 3px;
+    padding: 3.2rem 1.6rem;
+    text-align: center;
+    width: 25rem;
+}
+
+.box-layout__title {
+    margin: 0 0 1.6rem 0;
+    line-height: 1;
+}

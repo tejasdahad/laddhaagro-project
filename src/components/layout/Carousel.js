@@ -22,7 +22,7 @@ const Carousel = () => {
         <div className="container coloring">
         <div className="row">
             <div className="col s12 m3">
-                <h4>Here is a glimpse of what we do</h4>
+                <h4>Here is a glimpse of what we make</h4>
                 <p>We manufacture a range of products from drips to pipes to agricultural products. We have best work force to provide you the best product.</p>            
             </div>
             <div className="col s12 m9">

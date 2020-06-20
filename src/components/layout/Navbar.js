@@ -7,7 +7,7 @@ const Navbar = () => {
         let dropdown = document.querySelectorAll('dropdown-trigger');
         const options = {
             constrainWidth: true,
-            coverTrigger: true,
+            coverTrigger: false,
             belowOrigin:true,
             alignment: 'left'
         };
