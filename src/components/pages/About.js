@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import './About.css';
 import { Spring } from "react-spring/renderprops";
-import VisibilitySensor from "../layout/VisibilitySensor";
+import VisibilitySensor from "react-visibility-sensor";
 import Navbar from '../layout/Navbar';
 
 
