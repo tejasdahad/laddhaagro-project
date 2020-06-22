@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import './Contact.css';
+import Navbar from '../layout/Navbar';
 
 const Contact = () => {
     const [name, setName] = useState('');
@@ -37,6 +38,8 @@ const Contact = () => {
         });
       }
     return (
+        <Fragment>
+        <Navbar />
         <div className="container center">
             <div className="card">
                 <div className="card-image waves-effect waves-block waves-light">
@@ -65,41 +68,27 @@ const Contact = () => {
                 <div className="section"><iframe title="google location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.0827953490043!2d75.59206931403229!3d20.989317986019724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDU5JzIxLjUiTiA3NcKwMzUnMzkuMyJF!5e0!3m2!1sen!2sin!4v1582119764829!5m2!1sen!2sin" width="100%" height="250px" frameBorder="0" style={{border:0}} allowFullScreen=""></iframe></div>
                 </fieldset>
             </div>
-            <div className="row">
-                <h4 className="center">Enquiry Form</h4>
-                <fieldset>
-                <form id="enquiryForm" onSubmit={onSubmit} className="col s12">
-                <div className="row">
-                    <div className="input-field col s12">
-                    <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} className="validate" />
+            
+            <div className="bg-img" style={{marginTop:10}}>
+                <form className="container1">
+                    <h1>Enquiry</h1>
                     <label for="name">Name</label>
-                    </div>
-                </div>
-                <div className="row">
-                    <div class="input-field col s12">
-                    <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="validate" />
+                    <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
+
                     <label for="email">Email</label>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="input-field col s12">
-                    <input id="phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className="validate" />
+                    <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+    
                     <label for="phone">Phone Number</label>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="input-field col s12">
-                    <textarea id="query" value={query} onChange={(e) => setQuery(e.target.value)} className="validate" />
+                    <input id="phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className="validate" />
+
                     <label for="query">What do you want to enquire?</label>
-                    </div>
-                </div>
-                <div className="button">
-                    <button className="btn waves-light waves-effect black white-text"><i className="material-icons secondary-content">send</i>Submit</button>
-                </div>
+                    <textarea id="query" value={query} onChange={(e) => setQuery(e.target.value)} className="validate" />
+
+                    <button type="submit" className="btn1">Submit</button>
                 </form>
-                </fieldset>
             </div>
         </div>
+        </Fragment>
     )
 }
 

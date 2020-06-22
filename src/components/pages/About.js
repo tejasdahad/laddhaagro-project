@@ -5,6 +5,7 @@ import Spinner from '../layout/Spinner';
 import './About.css';
 import { Spring } from "react-spring/renderprops";
 import VisibilitySensor from "../layout/VisibilitySensor";
+import Navbar from '../layout/Navbar';
 
 
 const centeredStyles = {
@@ -30,8 +31,15 @@ const About = ({ getDirectors, directors }) => {
         typeWriter();        
     },[]);
     var i = 0;
-        var txt = 'Lorem ipsum dummy text blabla.';
-        var speed = 50;
+        var txt = `Laddha Agro Plast Industries Private Limited is a Non-govt company, incorporated on 19 Nov, 1987. It's a private unlisted company and is classified as 'company limited by shares'.
+
+        Company's authorized capital stands at Rs 100.0 lakhs and has 79.0% paid-up capital which is Rs 79.0 lakhs. Laddha Agro Plast Industries Private Limited last annual general meet (AGM) happened on 29 Sep, 2017. The company last updated its financials on 31 Mar, 2017 as per Ministry of Corporate Affairs (MCA).
+
+        Laddha Agro Plast Industries Private Limited is majorly in Agriculture and Allied Activities business from last 33 years and currently, company operations are active. Current board members & directors are RAVINDRA DAGDULAL LADDHA and KIRAN SHIVNARAYAN DAHAD .
+
+        Company is registered in Mumbai (Maharashtra) Registrar Office. Laddha Agro Plast Industries Private Limited registered address is PLOT NO 125M I D C JALGAON MH 425003 IN
+        `;
+        var speed = 10;
     function typeWriter() {
         
         if (i < txt.length) {
@@ -41,13 +49,14 @@ const About = ({ getDirectors, directors }) => {
         }
     }
     return (
-        <div>
-            
+        <Fragment>
+            <Navbar />
             <div
                 style={{
                 ...centeredStyles,
                 overflow: "hidden",
-                marginTop:0
+                marginTop:0,
+                width:"100%"
                 }}
             >
                 <VisibilitySensor partialVisibility>
@@ -66,15 +75,7 @@ const About = ({ getDirectors, directors }) => {
                             <div className="about"><h2 style={{...h2Styles, ...props, marginTop:10, paddingTop:10}}>About us</h2></div>
                             <div className="col s12 l8">
                             <p id="demo"></p>
-                            <p>
-                            Laddha Agro Plast Industries Private Limited is a Non-govt company, incorporated on 19 Nov, 1987. It's a private unlisted company and is classified as 'company limited by shares'.
-
-                            Company's authorized capital stands at Rs 100.0 lakhs and has 79.0% paid-up capital which is Rs 79.0 lakhs. Laddha Agro Plast Industries Private Limited last annual general meet (AGM) happened on 29 Sep, 2017. The company last updated its financials on 31 Mar, 2017 as per Ministry of Corporate Affairs (MCA).
-
-                            Laddha Agro Plast Industries Private Limited is majorly in Agriculture and Allied Activities business from last 33 years and currently, company operations are active. Current board members & directors are RAVINDRA DAGDULAL LADDHA and KIRAN SHIVNARAYAN DAHAD .
-
-                            Company is registered in Mumbai (Maharashtra) Registrar Office. Laddha Agro Plast Industries Private Limited registered address is PLOT NO 125M I D C JALGAON MH 425003 IN
-                            </p>
+                            <p></p>
                             <div>
                                 <h4 className="center">Certificates</h4>
                             </div>
@@ -174,58 +175,8 @@ const About = ({ getDirectors, directors }) => {
                 </VisibilitySensor>
                 
             </div>
-            <div
-                style={{
-                overflow: "hidden",
-                }}
-            >
-                <VisibilitySensor partialVisibility>
-                {({ isVisible }) => (
-                    <Spring
-                    delay={300}
-                    to={{
-                        opacity: isVisible ? 1 : 0,
-                        transform: isVisible
-                        ? "translateX(0)"
-                        : "translateX(-200px)",
-                    }}
-                    >
-                    {(props) => (
-                        <div>
-                        
-                        {directors.length!== 0 && <div style={{...props, backgroundColor:"#efebe9"}} className="center">
-                            <div className="row"><h3 className="center" style={{...h2Styles, ...props, marginTop:0}}>Directors</h3></div>
-                            <div className="row center">
-                                <div className="col m1"></div>
-                                {directors.map((director) => <Fragment><div className="col s12 m4">
-                                <div class="flip-box">
-                                <div class="flip-box-inner">
-                                    <div class="flip-box-front">
-                                    <img src={director.image} style={{width:300, height:400}} />
-                                    <span className="card-title">{director.name}</span>
-                                    </div>
-                                    <div class="flip-box-back">
-                                    <h5>Hey, this is the director of the company.</h5>
-                                    </div>
-                                </div>
-                            </div>
-                                </div>
-                                <div className="col m1"></div>
-                            </Fragment>
-                            )}
-                            </div>
-                        </div>
-                        }
-                        </div>
-                    )}
-                    </Spring>
-                )}
-                </VisibilitySensor>
-                
-            </div>
-            
-            
-        </div>
+
+        </Fragment>
     );
 }
 

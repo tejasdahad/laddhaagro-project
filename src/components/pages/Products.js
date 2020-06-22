@@ -1,10 +1,12 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from '../layout/Navbar';
 import './Products.css';
 
 const Products = () => {
     return (
-        <div>
+        <Fragment>
+        <Navbar />
             <div className="title">
                 <h2 className="center" style={{marginBottom:0, marginTop:10, paddingBottom:10}}>PRODUCTS WE MAKE</h2>
             </div>
@@ -124,7 +126,7 @@ const Products = () => {
             <div className="divider"></div>
 
             <div/>
-        </div>
+        </Fragment>
     )
 }
 
