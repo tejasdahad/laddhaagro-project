@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer class="page-footer light-green">
-          <div class="footer-copyright">
-            <div class="container center">
+        <footer className="page-footer light-green">
+          <div className="footer-copyright">
+            <div className="container center">
             Copyright ©2020 Laddha Agro Plast Industries
             </div>
           </div>

@@ -1,6 +1,5 @@
 import React, { useState, Fragment } from 'react';
 import './Contact.css';
-import Navbar from '../layout/Navbar';
 
 const Contact = () => {
     const [name, setName] = useState('');
@@ -39,7 +38,6 @@ const Contact = () => {
       }
     return (
         <Fragment>
-        <Navbar />
         <div className="container center">
             <div className="card">
                 <div className="card-image waves-effect waves-block waves-light">
@@ -70,18 +68,18 @@ const Contact = () => {
             </div>
             
             <div className="bg-img" style={{marginTop:10}}>
-                <form className="container1">
+                <form className="container1" onSubmit={onSubmit}>
                     <h1>Enquiry</h1>
-                    <label for="name">Name</label>
+                    <label htmlFor="name">Name</label>
                     <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
 
-                    <label for="email">Email</label>
+                    <label htmlFor="email">Email</label>
                     <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
     
-                    <label for="phone">Phone Number</label>
+                    <label htmlFor="phone">Phone Number</label>
                     <input id="phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className="validate" />
 
-                    <label for="query">What do you want to enquire?</label>
+                    <label htmlFor="query">What do you want to enquire?</label>
                     <textarea id="query" value={query} onChange={(e) => setQuery(e.target.value)} className="validate" />
 
                     <button type="submit" className="btn1">Submit</button>

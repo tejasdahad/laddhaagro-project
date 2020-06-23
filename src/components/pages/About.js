@@ -5,7 +5,6 @@ import Spinner from '../layout/Spinner';
 import './About.css';
 import { Spring } from "react-spring/renderprops";
 import VisibilitySensor from "react-visibility-sensor";
-import Navbar from '../layout/Navbar';
 
 
 const centeredStyles = {
@@ -50,7 +49,6 @@ const About = ({ getDirectors, directors }) => {
     }
     return (
         <Fragment>
-            <Navbar />
             <div
                 style={{
                 ...centeredStyles,
@@ -125,6 +123,7 @@ const About = ({ getDirectors, directors }) => {
                 )}
                 </VisibilitySensor>
             </div>
+            
             {directors.length===0 && <div className="center">
                 <Spinner />
             </div>}
@@ -175,7 +174,7 @@ const About = ({ getDirectors, directors }) => {
                 </VisibilitySensor>
                 
             </div>
-
+            
         </Fragment>
     );
 }
