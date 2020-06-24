@@ -1,20 +1,211 @@
-import React, { useEffect } from 'react';
-import M from 'materialize-css';
-import ReactDOM from 'react-dom'
-import './Carousel.css';
-import $ from 'jquery';
-import { Link } from 'react-router-dom';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import React, { useEffect, Component } from 'react';
+import './Carousel.scss';
+import e from 'express';
 
-const ImageCarousel =() => {
+
+const carouselContainer = document.querySelector(".carousel-container");
+
+// Data for carousel
+export const carouselSlidesData = [
+  {
+    image: "/images/coupler.jpg",
+    author: "Bane",
     
+  }, {
+    image: "/images/elbow.jpg",
+    author: "Ra's Al Ghul"
+  }, {
+    image: "/images/drip6.jpg",
+    author: "Joker"
+  }, {
+    image: "/images/nonisi.jpg",
+    author: "Bruce Wayne"
+  }, {
+    image: "/images/pvc.jpg",
+    author: "Rachel Dawes"
+  }, {
+    image: "/images/laddha.jpg",
+    author: "John Blake"
+  }, {
+    image: "/images/drip3.jpg",
+    author: "Alfred Pennyworth"
+  }
+];
+
+// Component for left arrow
+class CarouselLeftArrow extends Component {
+  render() {
     return (
-        <Carousel autoPlay={true} showArrows={true} showIndicators={true}>
-       
-    </Carousel>      
-    )
-    
-};
+      <a
+        href="#"
+        className="carousel__arrow carousel__arrow--left"
+        onClick={this.props.onClick}
+      >
+        <span className="fa fa-2x fa-angle-left" />
+      </a>
+    );
+  }
+}
 
-export default ImageCarousel;
+// Component for right arrow
+class CarouselRightArrow extends Component {
+  render() {
+    return (
+      <a
+        href="#"
+        className="carousel__arrow carousel__arrow--right"
+        onClick={this.props.onClick}
+      >
+        <span className="fa fa-2x fa-angle-right" />
+      </a>
+    );
+  }
+}
+
+// Component for carousel indicator
+class CarouselIndicator extends Component {
+  render() {
+    return (
+      <li>
+        <a
+          className={
+            this.props.index == this.props.activeIndex
+              ? "carousel__indicator carousel__indicator--active"
+              : "carousel__indicator"
+          }
+          onClick={this.props.onClick}
+        />
+      </li>
+    );
+  }
+}
+
+// Component for slide
+class CarouselSlide extends Component {
+  render() {
+    return (
+      <li
+        className={
+          this.props.index == this.props.activeIndex
+            ? "carousel__slide carousel__slide--active"
+            : "carousel__slide"
+        }
+      >
+        <img src={this.props.slide.image} alt={this.props.slide.author} style={{width:"70%", height:"80%"}}></img>
+
+        <p>
+          <strong className="carousel-slide__author">
+            {this.props.slide.author}
+          </strong>
+        </p>
+      </li>
+    );
+  }
+}
+
+// Carousel component
+class Carousel extends Component {
+  constructor(props) {
+    super(props);
+
+    this.goToSlide = this.goToSlide.bind(this);
+    this.goToPrevSlide = this.goToPrevSlide.bind(this);
+    this.goToNextSlide = this.goToNextSlide.bind(this);
+
+    this.state = {
+      activeIndex: 0
+    };
+  }
+
+/*  componentDidUpdate() {
+    this.autoplay()
+  }
+  componentDidMount() {
+    this.autoplay()
+  }
+
+  autoplay() {
+    setTimeout(() => {
+      var index = this.state.activeIndex;
+
+      ++index;
+
+      this.goToSlide(index);
+    }, 3000);
+  }
+*/
+  goToSlide(index) {
+    this.setState({
+      activeIndex: index
+    });
+  }
+
+  goToPrevSlide(e) {
+    e.preventDefault();
+
+    let index = this.state.activeIndex;
+    let { slides } = this.props;
+    let slidesLength = slides.length;
+
+    if (index < 1) {
+      index = slidesLength;
+    }
+
+    --index;
+
+    this.setState({
+      activeIndex: index
+    });
+  }
+
+  goToNextSlide(e) {
+    e.preventDefault();
+
+    let index = this.state.activeIndex;
+    let { slides } = this.props;
+    let slidesLength = slides.length - 1;
+
+    if (index === slidesLength) {
+      index = -1;
+    }
+
+    ++index;
+
+    this.setState({
+      activeIndex: index
+    });
+  }
+
+  render() {
+    return (
+      <div className="carousel1 container" style={{backgroundColor:"#212121", paddingBottom:10, paddingTop:10}}>
+        <CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} />
+        <ul className="carousel__slides">
+          {this.props.slides.map((slide, index) =>
+            <CarouselSlide
+              key={index}
+              index={index}
+              activeIndex={this.state.activeIndex}
+              slide={slide}
+            />
+          )}
+        </ul>
+
+        <CarouselRightArrow onClick={e => this.goToNextSlide(e)} />
+
+        <ul className="carousel__indicators">
+          {this.props.slides.map((slide, index) =>
+            <CarouselIndicator
+              key={index}
+              index={index}
+              activeIndex={this.state.activeIndex}
+              onClick={e => this.goToSlide(index)}
+            />
+          )}
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default Carousel;

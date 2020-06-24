@@ -6,7 +6,7 @@ const Footer = () => {
         <footer className="page-footer light-green">
           <div className="footer-copyright">
             <div className="container center">
-            Copyright ©2020 Laddha Agro Plast Industries
+            Copyright ©2020 Laddha Agro Plast Industries Private Limited
             </div>
           </div>
         </footer>

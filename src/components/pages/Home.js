@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import ReactPlayer from 'react-player';
-import Carousel from '../layout/Carousel';
+import Carousel,{ carouselSlidesData } from '../layout/Carousel';
 
 const Home = () => {
     return (
@@ -28,7 +28,7 @@ const Home = () => {
         <div className="container">
         
         </div>
-            <Carousel />
+            <Carousel slides={carouselSlidesData} />
         </div>
     );
 }
