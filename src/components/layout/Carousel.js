@@ -1,6 +1,5 @@
 import React, { useEffect, Component } from 'react';
 import './Carousel.scss';
-import e from 'express';
 
 
 const carouselContainer = document.querySelector(".carousel-container");
@@ -117,7 +116,7 @@ class Carousel extends Component {
     };
   }
 
-/*  componentDidUpdate() {
+  componentDidUpdate() {
     this.autoplay()
   }
   componentDidMount() {
@@ -128,12 +127,12 @@ class Carousel extends Component {
     setTimeout(() => {
       var index = this.state.activeIndex;
 
-      ++index;
+      index = (index + 1) % 7;
 
       this.goToSlide(index);
-    }, 3000);
+    }, 5000);
   }
-*/
+
   goToSlide(index) {
     this.setState({
       activeIndex: index
