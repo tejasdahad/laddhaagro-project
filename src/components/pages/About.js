@@ -48,7 +48,7 @@ const About = ({ getDirectors, directors }) => {
         }
     }
     return (
-        <Fragment>
+        <div style={{backgroundColor:"#212121"}}>
             <div
                 style={{
                 ...centeredStyles,
@@ -70,7 +70,7 @@ const About = ({ getDirectors, directors }) => {
                     >
                     {(props) => (
                         <div className="row" style={{...props, backgroundColor: "#ede7f6", marginTop:10}}>
-                            <div className="about"><h2 style={{...h2Styles, ...props, marginTop:10, paddingTop:10}}>About us</h2></div>
+                            <div className="about"><h2 style={{...h2Styles, ...props, marginTop:0, paddingTop:5}}>About us</h2></div>
                             <div className="col s12 l8">
                             <p id="demo"></p>
                             <p></p>
@@ -150,7 +150,7 @@ const About = ({ getDirectors, directors }) => {
                             <div className="row"><h3 className="center" style={{...h2Styles, ...props, marginTop:0}}>Directors</h3></div>
                             <div className="row center">
                                 <div className="col m1"></div>
-                                {directors.map((director) => <Fragment><div className="col s12 m4">
+                                {directors.map((director) => <Fragment><div className="col s12 m3 offset-2">
                                 <div className="card hoverable" style={{width:300, height:600}}>
                                     <div className="card-image">
                                         <img src={director.image} style={{width:300, height:400}} />
@@ -175,7 +175,7 @@ const About = ({ getDirectors, directors }) => {
                 
             </div>
             
-        </Fragment>
+        </div>
     );
 }
 

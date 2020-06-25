@@ -37,9 +37,9 @@ const Contact = () => {
         });
       }
     return (
-        <Fragment>
-        <div className="container center">
-            <div className="card">
+        <div style={{backgroundColor:"#212121"}}>
+        <div className="container center" style={{paddingTop:10, paddingBottom:10}}>
+            <div className="card" style={{marginTop:10}}>
                 <div className="card-image waves-effect waves-block waves-light">
                     <img className="activator" src="images/pipes.jpg" alt="pipes" style={{width:500, height:400}} />
                 </div>
@@ -86,7 +86,7 @@ const Contact = () => {
                 </form>
             </div>
         </div>
-        </Fragment>
+        </div>
     )
 }
 

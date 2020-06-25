@@ -8,26 +8,26 @@ const carouselContainer = document.querySelector(".carousel-container");
 export const carouselSlidesData = [
   {
     image: "/images/coupler.jpg",
-    author: "Bane",
+    author: "Coupler",
     
   }, {
     image: "/images/elbow.jpg",
-    author: "Ra's Al Ghul"
+    author: "Elbow"
   }, {
     image: "/images/drip6.jpg",
-    author: "Joker"
+    author: "Drips"
   }, {
     image: "/images/nonisi.jpg",
-    author: "Bruce Wayne"
+    author: "Pipes"
   }, {
     image: "/images/pvc.jpg",
-    author: "Rachel Dawes"
+    author: "ISI PVC Pipes"
   }, {
     image: "/images/laddha.jpg",
-    author: "John Blake"
+    author: "Inline drips"
   }, {
     image: "/images/drip3.jpg",
-    author: "Alfred Pennyworth"
+    author: "Farm with drip irrigation system"
   }
 ];
 
@@ -90,7 +90,7 @@ class CarouselSlide extends Component {
             : "carousel__slide"
         }
       >
-        <img src={this.props.slide.image} alt={this.props.slide.author} style={{width:"70%", height:"80%"}}></img>
+        <img src={this.props.slide.image} alt={this.props.slide.author} style={{width:"80%", height:"10%"}}></img>
 
         <p>
           <strong className="carousel-slide__author">
@@ -115,7 +115,7 @@ class Carousel extends Component {
       activeIndex: 0
     };
   }
-
+/*
   componentDidUpdate() {
     this.autoplay()
   }
@@ -132,7 +132,7 @@ class Carousel extends Component {
       this.goToSlide(index);
     }, 5000);
   }
-
+*/
   goToSlide(index) {
     this.setState({
       activeIndex: index
@@ -177,7 +177,7 @@ class Carousel extends Component {
 
   render() {
     return (
-      <div className="carousel1 container" style={{backgroundColor:"#212121", paddingBottom:10, paddingTop:10}}>
+      <div className="carousel1 container" style={{backgroundColor:"#212121", paddingBottom:10, paddingTop:10, width:"100%"}}>
         <CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} />
         <ul className="carousel__slides">
           {this.props.slides.map((slide, index) =>

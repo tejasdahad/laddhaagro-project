@@ -26,11 +26,11 @@ ul {
   margin-right: auto;
   margin-left: auto;
   display: none;
-  max-width: 900px;
+  max-width: 100%;
   list-style-type: none;
   text-align: center;
 
-  @media (max-width: 991px) {
+  @media (max-width: 1200px) {
     padding-right: 60px;
     padding-left: 60px;
   }
@@ -54,7 +54,8 @@ ul {
 .carousel-slide__author,
 .carousel-slide__source {
   font-family: 'Roboto', arial, sans-serif;
-  font-size: 14px;
+  font-size: 20px;
+  color:white;
 
   @media (min-width: $breakpoint-desktop) {
     font-size: 16px;

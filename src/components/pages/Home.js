@@ -1,22 +1,30 @@
-import React from 'react';
+import React,{ useEffect } from 'react';
 import './Home.css';
+import M from 'materialize-css'
 import ReactPlayer from 'react-player';
-import Carousel,{ carouselSlidesData } from '../layout/Carousel';
+import Carousel, { carouselSlidesData } from '../layout/Carousel';
 
 const Home = () => {
+    
     return (
-        <div style={{marginTop:5}}>
-        <div className="bg-img1">
+        <div style={{marginTop:5, backgroundColor:"#212121"}}>
+        <div className="row">
+            <div className="col s12 m3 center-align">
+            <h3 className="white-text">Welcome</h3>
+            <h5 className="white-text">Quality is our symbol.</h5>
+            <h5 className="white-text" style={{fontStyle:"italic"}}>Manufacturing the best quality product since 3 decades.</h5>
+            </div>
+            <div className="col s12 m9">
+            <Carousel slides={carouselSlidesData} />
 
-            <div className="center">
-                <h4 className="white-text">Welcome....</h4>
             </div>
         </div>
-        
-        <div className="container center">
-            <img src="/images/laddha_wc1.png" style={{width:"100%", height:"100%"}} />
+        <div className="row">
+
         </div>
-        <h3 className="center">Here is what we do</h3>
+        <div className="bg-img1" style={{paddingBottom:10}}>
+        <div className="row">
+        <h3 className="center white-text">Here is what we do</h3>
         <div className='container wrapper' style={{marginTop:10, marginBottom:10}}>
         <ReactPlayer
             className='player'
@@ -25,10 +33,16 @@ const Home = () => {
             height='100%'
         />
         </div>
-        <div className="container">
-        
+        <div className="row">
+            <div className="col s12 m3 center-align valign-wrapper">
+                <h4 className="white-text">We supply products all over Maharashtra and some parts of Chhatisgarh, Haryana, Karnataka and Madhya Pradesh.</h4>
+            </div>
+            <div className="col s12 m9 center-align">
+                <img src="/images/maha.jpg" alt="maha" style={{width:"80%", height:"80%"}} />
+            </div>
         </div>
-            <Carousel slides={carouselSlidesData} />
+        </div>
+        </div>
         </div>
     );
 }
