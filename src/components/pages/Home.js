@@ -35,7 +35,7 @@ const Home = () => {
         </div>
         <div className="row">
             <div className="col s12 m3 center-align valign-wrapper">
-                <h4 className="white-text">We supply products all over Maharashtra and some parts of Chhatisgarh, Haryana, Karnataka and Madhya Pradesh.</h4>
+                <h4 style={{color:"#d50000"}}>We supply products all over Maharashtra and some parts of Chhatisgarh, Haryana, Karnataka and Madhya Pradesh.</h4>
             </div>
             <div className="col s12 m9 center-align">
                 <img src="/images/maha.jpg" alt="maha" style={{width:"80%", height:"80%"}} />

@@ -24,6 +24,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-spring": "^8.0.27",
+    "react-vertical-timeline-component": "^3.0.2",
     "react-visibility-sensor": "^5.1.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",

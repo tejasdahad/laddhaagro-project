@@ -5,6 +5,7 @@ import Spinner from '../layout/Spinner';
 import './About.css';
 import { Spring } from "react-spring/renderprops";
 import VisibilitySensor from "react-visibility-sensor";
+import VerticalTimeline1 from '../layout/VerticalTimeline';
 
 
 const centeredStyles = {
@@ -97,31 +98,9 @@ const About = ({ getDirectors, directors }) => {
                 </VisibilitySensor>
             </div>
             <div className="divider"></div>
-            <div
-                style={{
-                ...centeredStyles,
-                }}
-            >
-                <VisibilitySensor>
-                {({ isVisible }) => (
-                    <Spring delay={200} to={{ opacity: isVisible ? 1 : 0 }}>
-                    {({ opacity }) => (
-                        <div className="row" style={{  opacity, backgroundColor:"#e0f2f1" }}>
-                        <h2 style={{...h2Styles, marginTop:0}}>History</h2>
-                        <p id="company-info">Laddha Agro Plast Industries Private Limited is a Private incorporated on 19 November 1987. It is classified as Non-govt company and is registered at Registrar of Companies, Mumbai. Its authorized share capital is Rs. 10,000,000 and its paid up capital is Rs. 7,900,000. It is inolved in Growing of crops; market gardening; horticulture
-        
-                        Laddha Agro Plast Industries Private Limited's Annual General Meeting (AGM) was last held on 30 September 2019 and as per records from Ministry of Corporate Affairs (MCA), its balance sheet was last filed on 31 March 2019.
-                        
-                        Directors of Laddha Agro Plast Industries Private Limited are Ravindra Dagdulal Laddha and Kiran Shivnarayan Dahad.
-                        
-                        Laddha Agro Plast Industries Private Limited's Corporate Identification Number is (CIN) U01100MH1987PTC045347 and its registration number is 45347.Its Email address is laddhaagro@gmail.com and its registered address is PLOT NO 125M I D C JALGAON MH 425003 IN , - , .
-                        
-                        Current status of Laddha Agro Plast Industries Private Limited is - Active.</p>
-                    </div>
-                    )}
-                    </Spring>
-                )}
-                </VisibilitySensor>
+            <div className="timeline" style={{marginBottom:10, backgroundColor:"grey"}}>
+            <div className="about"><h2 style={{...h2Styles, marginTop:0, paddingTop:5, paddingBottom:5, marginBottom:5}}>History</h2></div>
+            <VerticalTimeline1 />
             </div>
             
             {directors.length===0 && <div className="center">
