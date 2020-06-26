@@ -14,7 +14,7 @@ const Navbar = () => {
         <div>
             <nav>
                 <div className="nav-wrapper light-green white-text">
-                    <h5 className="left hide-on-med-and-down">LADDHA AGRO PLAST INDUSTRIES</h5>
+                    <h5 className="left hide-on-med-and-down"><Link to="/">LADDHA AGRO PLAST INDUSTRIES</Link></h5>
                     <Link to="/" className="brand-logo center"><img className="hoverable" src="/images/logo.jpg" style={{height:65}} alt="logo" /></Link>
                     <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-and-up"><i className="material-icons">menu</i></a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down black-text">

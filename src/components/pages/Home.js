@@ -33,8 +33,8 @@ const Home = () => {
             height='100%'
         />
         </div>
-        <div className="row valign-wrapper">
-            <div className="col s12 m3 offset-m1 center-align" style={{backgroundColor:"#e8eaf6"}}>
+        <div className="row">
+            <div className="col s12 offset-m1 m3 center-align" style={{backgroundColor:"#e8eaf6", marginBottom:5}}>
                 <h4 style={{color:"black"}}>We supply products all over Maharashtra and some parts of Chhatisgarh, Haryana, Karnataka and Madhya Pradesh.</h4>
             </div>
             <div className="col s12 m8 center-align">
