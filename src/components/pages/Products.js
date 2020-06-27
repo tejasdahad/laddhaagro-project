@@ -58,7 +58,7 @@ const Products = () => {
                             <img src="/images/pipe1.jpeg" alt="pipe1" style={{width:300, height:200}}/>
                         </div>
                         <div className="col m2"></div>
-                        <div className="col m4">
+                        <div className="col m4 hide-on-med-and-down">
                             <img src="/images/pipe2.jpeg" alt="pipe2" style={{width:300, height:200}}/>
                         </div>
                     </div>
