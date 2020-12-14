@@ -3,19 +3,23 @@ import './Home.css';
 import M from 'materialize-css'
 import ReactPlayer from 'react-player';
 import Carousel, { carouselSlidesData } from '../layout/Carousel';
+import TestCarousel from './TestCarousel';
+import SwipeableTextMobileStepper from './TestCar1';
 
 const Home = () => {
     
     return (
         <div style={{marginTop:5, backgroundColor:"#212121"}}>
         <div className="row">
-            <div className="col s12 m3 center-align">
+            <div className="col s12 m12 center-align">
             <h3 className="white-text">Welcome</h3>
             <h5 className="white-text">Quality is our symbol.</h5>
             <h5 className="white-text" style={{fontStyle:"italic"}}>Manufacturing the best quality product since 3 decades.</h5>
             </div>
-            <div className="col s12 m9">
-            <Carousel slides={carouselSlidesData} />
+            <div className="col s12 center" style={{marginTop:10}}>
+            {//<Carousel slides={carouselSlidesData} />
+        }
+        <TestCarousel />
 
             </div>
         </div>
