@@ -46,7 +46,8 @@ const Home = () => {
         </div>
         </div>
         <div className="row">
-            <Testimonials />
+            {//<Testimonials />
+            }
         </div>
         </div>
     );

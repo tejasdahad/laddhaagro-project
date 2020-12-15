@@ -11,6 +11,19 @@
     border-radius: 30px;
     height: 80%;
 }
+.iframs{
+  height: 376px;
+}
+
+@media only screen and  (max-width : 625px) {
+  .location{
+    height: 100%;
+  }
+  .iframs{
+    height: 200px;
+  }
+}
+
 
 @media only screen and  (min-width : 625px) {
     .card {

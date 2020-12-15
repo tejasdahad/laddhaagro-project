@@ -1,4 +1,6 @@
 import React,{ useEffect } from 'react';
+import 'materialize-css/dist/css/materialize.min.css';
+import M from 'materialize-css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
@@ -18,6 +20,7 @@ const store = configureStore();
 
 const App = () => {
   useEffect(() => {
+    M.AutoInit();
   });
   return (
     <Provider store={store}>

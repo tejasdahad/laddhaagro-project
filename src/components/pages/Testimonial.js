@@ -4,15 +4,17 @@ import { Carousel } from "react-responsive-carousel";
 import './Testimonial.css';
 import Typography from '@material-ui/core/Typography';
 import { Paper } from "@material-ui/core";
+import M from 'materialize-css';
 
 export default class Testimonials extends Component {
+    
   render() {
     return (
     <Paper elevation="2" style={{marginTop:10}}>
         <Typography variant="h2" style={{color:"green"}}>
             Testimonials
         </Typography>
-      <Carousel
+      {/*<Carousel
         showArrows={true}
         infiniteLoop={true}
         showThumbs={false}
@@ -55,7 +57,7 @@ export default class Testimonials extends Component {
             </p>
           </div>
         </div>
-      </Carousel>
+      </Carousel>*/}
       </Paper>
     );
   }
