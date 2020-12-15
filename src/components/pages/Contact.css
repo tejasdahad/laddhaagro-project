@@ -3,16 +3,22 @@
 }
 
 .location {
-    background-color:  #bbdefb;
+    background-color:  white;
     color: black;
+    border-color: #4CAF50;
+    border-width: 20px;
+    padding-top: 0;
+    border-radius: 30px;
+    height: 80%;
 }
-
 
 @media only screen and  (min-width : 625px) {
     .card {
         width: 500px;
         height: 500px;
-        margin-left: 175px;
+        margin-left: 0px;
+        border-width: 10px;
+        border-color: #4CAF50;
     }
 }
 

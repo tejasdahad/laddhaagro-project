@@ -1,5 +1,8 @@
 import React, { useState, Fragment } from 'react';
 import './Contact.css';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 
 const Contact = () => {
     const [name, setName] = useState('');
@@ -37,9 +40,12 @@ const Contact = () => {
         });
       }
     return (
-        <div style={{backgroundColor:"#212121"}}>
-        <div className="container center" style={{paddingTop:10, paddingBottom:10}}>
-            <div className="card" style={{marginTop:10}}>
+        <div>
+        <div style={{paddingTop:10, paddingBottom:10}}>
+            <Grid container spacing={2}> 
+                <Grid md={1}></Grid>
+                <Grid item xs={12} md={3}>
+                <div className="card" style={{marginTop:10}}>
                 <div className="card-image waves-effect waves-block waves-light">
                     <img className="activator" src="images/pipes.jpg" alt="pipes" style={{width:500, height:400}} />
                 </div>
@@ -60,13 +66,23 @@ const Contact = () => {
                     </address>
                 </div>
             </div>
-            <div className="center">
-                <fieldset className="location">
-                <h4><i className="material-icons hide-on-med-and-down">grade</i>  Where to find us?  <i className="material-icons hide-on-med-and-down">grade</i></h4>
-                <div className="section"><iframe title="google location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.0827953490043!2d75.59206931403229!3d20.989317986019724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDU5JzIxLjUiTiA3NcKwMzUnMzkuMyJF!5e0!3m2!1sen!2sin!4v1582119764829!5m2!1sen!2sin" width="100%" height="250px" frameBorder="0" style={{border:0}} allowFullScreen=""></iframe></div>
-                </fieldset>
-            </div>
+                </Grid>
+                <Grid md={2}></Grid>
+                <Grid item xs={12} md={5} style={{marginTop:10}}>
+                        <fieldset className="location" style={{padding:0}}>
+        {//                <h4><i className="material-icons hide-on-med-and-down">grade</i>  Where to find us?  <i className="material-icons hide-on-med-and-down">grade</i></h4>
+        }                <div className="section" style={{paddingTop:0,paddingBottom:0}}>
+                            <iframe title="google location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.0827953490043!2d75.59206931403229!3d20.989317986019724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDU5JzIxLjUiTiA3NcKwMzUnMzkuMyJF!5e0!3m2!1sen!2sin!4v1582119764829!5m2!1sen!2sin" width="100%" frameBorder="0" style={{border:0, padding:0,margin:0, height:"378px"}} allowFullScreen=""></iframe>
+                        </div>
+                        </fieldset>
+                </Grid>
+                <Grid item xs={12}>
+
+                </Grid>
+            </Grid>
             
+            
+            <div className="container">
             <div className="bg-img" style={{marginTop:10}}>
                 <form className="container1" onSubmit={onSubmit}>
                     <h1>Enquiry</h1>
@@ -84,6 +100,7 @@ const Contact = () => {
 
                     <button type="submit" className="btn1">Submit</button>
                 </form>
+            </div>
             </div>
         </div>
         </div>

@@ -5,16 +5,17 @@ import ReactPlayer from 'react-player';
 import Carousel, { carouselSlidesData } from '../layout/Carousel';
 import TestCarousel from './TestCarousel';
 import SwipeableTextMobileStepper from './TestCar1';
+import Testimonials from './Testimonial';
 
 const Home = () => {
     
     return (
-        <div style={{marginTop:5, backgroundColor:"#212121"}}>
+        <div style={{marginTop:5}}>
         <div className="row">
             <div className="col s12 m12 center-align">
-            <h3 className="white-text">Welcome</h3>
-            <h5 className="white-text">Quality is our symbol.</h5>
-            <h5 className="white-text" style={{fontStyle:"italic"}}>Manufacturing the best quality product since 3 decades.</h5>
+            <h3>Welcome</h3>
+            <h5>Quality is our symbol.</h5>
+            <h5 style={{fontStyle:"italic"}}>Manufacturing the best quality product since 3 decades.</h5>
             </div>
             <div className="col s12 center" style={{marginTop:10}}>
             {//<Carousel slides={carouselSlidesData} />
@@ -22,9 +23,6 @@ const Home = () => {
         <TestCarousel />
 
             </div>
-        </div>
-        <div className="row">
-
         </div>
         <div className="bg-img1" style={{paddingBottom:10}}>
         <div className="row">
@@ -46,6 +44,9 @@ const Home = () => {
             </div>
         </div>
         </div>
+        </div>
+        <div className="row">
+            <Testimonials />
         </div>
         </div>
     );
