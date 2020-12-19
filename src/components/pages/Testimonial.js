@@ -14,7 +14,7 @@ export default class Testimonials extends Component {
         <Typography variant="h2" style={{color:"green"}}>
             Testimonials
         </Typography>
-      {/*<Carousel
+      <Carousel
         showArrows={true}
         infiniteLoop={true}
         showThumbs={false}
@@ -57,7 +57,7 @@ export default class Testimonials extends Component {
             </p>
           </div>
         </div>
-      </Carousel>*/}
+      </Carousel>
       </Paper>
     );
   }

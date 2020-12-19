@@ -15,13 +15,13 @@ import Pipes from './components/product-pages/Pipes';
 import AgriProducts from './components/product-pages/AgriProducts';
 import Test from './components/pages/Test';
 import NotFoundPage from './components/pages/NotFoundPage';
-
+import TestNav from './components/layout/TestNav';
 const store = configureStore();
 
 const App = () => {
   useEffect(() => {
     M.AutoInit();
-  });
+  },[]);
   return (
     <Provider store={store}>
     <div className="App">

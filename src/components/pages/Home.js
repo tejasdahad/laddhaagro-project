@@ -48,6 +48,7 @@ const Home = () => {
         <div className="row">
             {//<Testimonials />
             }
+            
         </div>
         </div>
     );
